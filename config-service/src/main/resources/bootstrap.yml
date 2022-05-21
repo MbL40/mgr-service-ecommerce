@@ -7,11 +7,11 @@ spring:
       server:
         git:
           uri: https://github.com/MbL40/mgr-service-ecommerce.git
-          searchPath: config-data
+          searchPaths: config-data
           userName: ${GIT_USER}
           password: ${GIT_PASSWORD}
   security:
     user:
       name: root
       password: s3cr3t
-      
+
