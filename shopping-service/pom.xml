@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.5.RELEASE</version>
+        <version>2.2.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>final.project</groupId>
-    <artifactId>service-product</artifactId>
+    <artifactId>service-shopping</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>service-product</name>
+    <name>service-shopping</name>
     <description>Project for shore online</description>
     <properties>
         <java.version>11</java.version>
