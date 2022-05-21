@@ -6,4 +6,12 @@ spring:
     config:
       server:
         git:
-          uri:
+          uri: https://github.com/MbL40/mgr-service-ecommerce.git
+          searchPath: config-data
+          userName: ${GIT_USER}
+          password: ${GIT_PASSWORD}
+  security:
+    user:
+      name: root
+      password: s3cr3t
+      
