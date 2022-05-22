@@ -24,10 +24,10 @@ spring:
   # JPA / HIBERNATE
   # ===============================
 jpa:
-    defer-datasource-initialization: true
-    show-sql: true
-    hibernate:
-      ddl-auto: update
+  defer-datasource-initialization: true
+  show-sql: true
+  hibernate:
+    ddl-auto: update
     database-platform: org.hibernate.dialect.H2Dialect
     properties:
       hibernate:
