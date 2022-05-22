@@ -24,6 +24,7 @@ spring:
   # JPA / HIBERNATE
   # ===============================
   jpa:
+    defer-datasource-initialization: tru
     show-sql: true
     hibernate:
       ddl-auto: update
