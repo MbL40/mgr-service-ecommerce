@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.store</groupId>
-    <artifactId>service-customer</artifactId>
+    <artifactId>service-shopping</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>service-customer</name>
+    <name>service-shopping</name>
     <description>Project for shore online</description>
     <properties>
         <java.version>11</java.version>
@@ -63,14 +63,14 @@
                     <artifactId>spring-boot-starter-actuator</artifactId>
             </dependency>
         -->
-        <!--        <dependency>
+              <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-sleuth</artifactId>
-        </dependency>-->
+        <!--        <dependency>
+                  <groupId>org.springframework.cloud</groupId>
+                  <artifactId>spring-cloud-starter-sleuth</artifactId>
+              </dependency>-->
 
     </dependencies>
     <dependencyManagement>

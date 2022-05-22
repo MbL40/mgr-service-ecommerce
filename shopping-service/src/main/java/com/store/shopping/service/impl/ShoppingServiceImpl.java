@@ -1,9 +1,8 @@
-package com.store.service.shopping.service.impl;
+package com.store.shopping.service.impl;
 
-import com.store.service.shopping.repository.InvoiceItemsRepository;
-import com.store.service.shopping.repository.InvoiceRepository;
-import com.store.service.shopping.entity.Invoice;
-import com.store.service.shopping.service.ShoppingService;
+import com.store.shopping.repository.InvoiceRepository;
+import com.store.shopping.entity.Invoice;
+import com.store.shopping.service.ShoppingService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,10 +14,11 @@ import java.util.List;
 public class ShoppingServiceImpl implements ShoppingService {
 
     @Autowired
-    InvoiceRepository invoiceRepository;
+    private InvoiceRepository invoiceRepository;
 
-    @Autowired
-    InvoiceItemsRepository invoiceItemsRepository;
+    public ShoppingServiceImpl(InvoiceRepository invoiceRepository) {
+        this.invoiceRepository = invoiceRepository;
+    }
 
     @Override
     public List<Invoice> findInvoiceAll() {

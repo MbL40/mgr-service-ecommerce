@@ -1,4 +1,4 @@
-package com.store.service.shopping.controller;
+package com.store.shopping.controller;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -1,6 +1,6 @@
-package com.store.service.shopping.service;
+package com.store.shopping.service;
 
-import com.store.service.shopping.entity.Invoice;
+import com.store.shopping.entity.Invoice;
 
 import java.util.List;
 

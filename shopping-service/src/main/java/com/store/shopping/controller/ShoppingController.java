@@ -1,9 +1,9 @@
-package com.store.service.shopping.controller;
+package com.store.shopping.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.store.service.shopping.entity.Invoice;
-import com.store.service.shopping.service.ShoppingService;
+import com.store.shopping.entity.Invoice;
+import com.store.shopping.service.ShoppingService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,13 +19,13 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import javax.validation.Valid;
 
-@Slf4j
+//@Slf4j
 @RestController
 @RequestMapping("/invoices")
 public class ShoppingController {
 
     @Autowired
-    ShoppingService shoppingService;
+    public ShoppingService shoppingService;
 
     // -------------------Retrieve All Invoices--------------------------------------------
     @GetMapping
@@ -40,10 +40,10 @@ public class ShoppingController {
     // -------------------Retrieve Single Invoice------------------------------------------
     @GetMapping(value = "/{id}")
     public ResponseEntity<Invoice> getInvoice(@PathVariable("id") long id) {
-        log.info("Fetching Invoice with id {}", id);
+      //  log.info("Fetching Invoice with id {}", id);
         Invoice invoice  = shoppingService.getInvoice(id);
         if (null == invoice) {
-            log.error("Invoice with id {} not found.", id);
+       //     log.error("Invoice with id {} not found.", id);
             return  ResponseEntity.notFound().build();
         }
         return  ResponseEntity.ok(invoice);
@@ -52,7 +52,7 @@ public class ShoppingController {
     // -------------------Create a Invoice-------------------------------------------
     @PostMapping
     public ResponseEntity<Invoice> createInvoice(@Valid @RequestBody Invoice invoice, BindingResult result) {
-        log.info("Creating Invoice : {}", invoice);
+       // log.info("Creating Invoice : {}", invoice);
         if (result.hasErrors()){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, this.formatMessage(result));
         }
@@ -64,13 +64,13 @@ public class ShoppingController {
     // ------------------- Update a Invoice ------------------------------------------------
     @PutMapping(value = "/{id}")
     public ResponseEntity<?> updateInvoice(@PathVariable("id") long id, @RequestBody Invoice invoice) {
-        log.info("Updating Invoice with id {}", id);
+        //log.info("Updating Invoice with id {}", id);
         
         invoice.setId(id);
         Invoice currentInvoice=shoppingService.updateInvoice(invoice);
 
         if (currentInvoice == null) {
-            log.error("Unable to update. Invoice with id {} not found.", id);
+            //log.error("Unable to update. Invoice with id {} not found.", id);
             return  ResponseEntity.notFound().build();
         }
         return  ResponseEntity.ok(currentInvoice);
@@ -79,11 +79,11 @@ public class ShoppingController {
     // ------------------- Delete a Invoice-----------------------------------------
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Invoice> deleteInvoice(@PathVariable("id") long id) {
-        log.info("Fetching & Deleting Invoice with id {}", id);
+        //log.info("Fetching & Deleting Invoice with id {}", id);
 
         Invoice invoice = shoppingService.getInvoice(id);
         if (invoice == null) {
-            log.error("Unable to delete. Invoice with id {} not found.", id);
+            //log.error("Unable to delete. Invoice with id {} not found.", id);
             return  ResponseEntity.notFound().build();
         }
         invoice = shoppingService.deleteInvoice(invoice);

@@ -1,7 +1,7 @@
-package com.store.service.shopping.repository;
+package com.store.shopping.repository;
 
 
-import com.store.service.shopping.entity.Invoice;
+import com.store.shopping.entity.Invoice;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
