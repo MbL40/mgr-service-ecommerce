@@ -1,6 +1,7 @@
 package com.store.shopping.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.store.shopping.model.Customer;
 import lombok.Data;
 
 import javax.persistence.*;;
@@ -41,8 +42,9 @@ public class Invoice  {
 
     private String state;
 
-//    @Transient
-//    private Customer customer;
+
+   @Transient
+   private Customer customer;
 
     public Invoice(){
         items = new ArrayList<>();

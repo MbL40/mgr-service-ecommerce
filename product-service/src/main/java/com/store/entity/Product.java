@@ -45,7 +45,7 @@ public class Product {
     private String description;
 
     @Positive(message = "Debe ser mayor que cero")
-    private Long stock;
+    private Double stock;
     private Double price;
     private String status;
     @Column(name = "create_at")

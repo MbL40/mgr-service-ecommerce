@@ -51,12 +51,12 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findByCategory(category);
     }
 
-    public Product updateStock(Long id, Long quantity) {
+    public Product updateStock(Long id, Double quantity) {
         Product productDB = getProduct(id);
         if (null == productDB) {
             return null;
         }
-        Long stock = productDB.getStock() + quantity;
+        Double stock = productDB.getStock() + quantity;
         productDB.setStock(stock);
         return productRepository.save(productDB);
     }

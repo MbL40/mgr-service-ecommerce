@@ -83,7 +83,7 @@ public class ProductController {
     }
 
     @PostMapping(value = "/{id}/stock")
-    public ResponseEntity<Product> updateStock(@PathVariable Long id, @RequestParam(name = "quantity", required = true) Long quantity){
+    public ResponseEntity<Product> updateStock(@PathVariable Long id, @RequestParam(name = "quantity", required = true) Double quantity){
         Product product = productService.updateStock(id, quantity);
         if(product == null){
             return ResponseEntity.notFound().build();

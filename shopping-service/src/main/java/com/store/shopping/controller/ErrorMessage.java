@@ -11,6 +11,6 @@ import java.util.Map;
 @Setter
 @Builder
 public class ErrorMessage {
-    private String code ;
-    private List<Map<String, String >> messages ;
+    private String code;
+    private List<Map<String, String >> messages;
 }

@@ -21,6 +21,6 @@ public interface ProductService {
     public Product deleteProduct(Long id);
     
     public List<Product> findByCategory(Category category);
-    public Product updateStock(Long id, Long quantity);
+    public Product updateStock(Long id, Double quantity);
     
 }
